@@ -1,0 +1,168 @@
+body {
+  background-color: #EFEFF2;
+}
+
+/*heading style*/
+h1, h4, h8 {
+ font-family: "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue";
+}
+
+h2, h3, h6 {
+  font-family: "HelveticaNeue", "Helvetica Neue";
+}
+
+h5, h7, h9 {
+  font-family: "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue";
+}
+
+
+h1 {
+  font-family: "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue";
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3, h4 {
+  font-size: 18px;
+}
+
+h5, h6 {
+  font-size: 14px;
+}
+
+h7, h8 {
+  font-size: 12px;
+}
+
+h9 {
+  font-size: 10px;
+}
+
+/*Navbar properties*/
+.navbar {
+  background-color: #000000;
+  height: 56px;
+  overflow: hidden;
+  padding: 0;
+  display: block;
+}
+
+.navbar ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  padding-left: 10px;
+  margin: 0;
+  height: 100%;
+  float:right;
+  overflow: hidden;
+  background: linear-gradient(to right, transparent, #F88200, #F88200, #F88200);
+}
+
+.navbar li {
+  height: 100%;
+  display: inline-block;
+  text-align: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 22px;
+  padding-bottom: 16px;
+  transform: skew(-15deg);
+  /*border-left: 1px solid white;*/
+}
+
+.navbar li a {
+  display:block;
+  text-decoration:none;
+  transform: skew(15deg);
+  color: white;
+}
+
+.orange-bg-item {
+  border-left: 1px solid white;
+  background-color: #F88200;
+}
+
+.black-bg-item{
+  background-color: #000000;
+}
+
+.car-detail-content {
+  margin: 0 auto;
+  padding: 0px;
+}
+
+/*placeholder for the big image*/
+#image-placeholder {
+
+}
+
+.big-image{
+  height: 432px;
+  width: 728px;
+}
+
+.sale-details {
+  margin: 0;
+  height: 432px;
+  width: 296px;
+  border: 2px solid red;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+}
+
+.top-box {
+  display: flex;
+  width: 100%;
+  border: 1px solid red;
+}
+
+.bottom-box {
+  display: flex;
+  width: 100%;
+  border: 1px solid red;
+  padding: 24px;
+}
+
+.list-detail {
+  background-color: #FFFFFF;
+  width: 480px;
+  height: 266px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.App {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
