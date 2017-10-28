@@ -9,18 +9,18 @@ class Navbar extends Component {
             <ul className="navbar-item-right">
               <MediaQuery minWidth={1024}>
                 <li className='black-bg-item'>
-                    <a href='#'> <i class="fa fa-search" aria-hidden="true"> </i> </a>
+                    <a href='#'> <i className="fa fa-search" aria-hidden="true"> </i> </a>
                 </li>
               </MediaQuery>
               <li className='orange-bg-item'>
-                <a href='#'> <i class="fa fa-map-marker" aria-hidden="true"></i> </a>
+                <a href='#'> <i className="fa fa-map-marker" aria-hidden="true"></i> </a>
               </li>
               <li className='orange-bg-item'>
-                <a href='#'> <i class="fa fa-phone" aria-hidden="true"></i> </a>
+                <a href='#'> <i className="fa fa-phone" aria-hidden="true"></i> </a>
               </li>
               <MediaQuery minWidth={1024}>
                 <li className='orange-bg-item'>
-                  <a href='#'> <i class="fa fa-clock-o" aria-hidden="true"> </i> </a>
+                  <a href='#'> <i className="fa fa-clock-o" aria-hidden="true"> </i> </a>
                 </li>
               </MediaQuery>
             </ul>

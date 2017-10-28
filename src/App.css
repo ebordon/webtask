@@ -4,20 +4,24 @@ body {
 
 /*heading style*/
 h1, h4, h8 {
- font-family: "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue";
+ font-family: "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", sans-serif;
+ margin-bottom: 0;
+ font-weight: bold;
 }
 
 h2, h3, h6 {
-  font-family: "HelveticaNeue", "Helvetica Neue";
+  font-family: "HelveticaNeue", "Helvetica Neue", sans-serif;
+  margin-bottom: 0;
 }
 
 h5, h7, h9 {
-  font-family: "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue";
+  font-family: "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", sans-serif;
+  margin-bottom: 0;
 }
 
 
 h1 {
-  font-family: "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue";
+  font-family: "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", sans-serif;
   font-size: 36px;
 }
 
@@ -40,6 +44,20 @@ h7, h8 {
 h9 {
   font-size: 10px;
 }
+
+/*table style*/
+table {
+  width: 100%;
+}
+
+tr {
+    border-bottom: 1px solid #ddd;
+}
+
+tr:last-child {
+   border-bottom: none;
+}
+
 
 /*Navbar properties*/
 .navbar {
@@ -100,6 +118,15 @@ h9 {
 
 }
 
+#mobile-image-placeholder{
+   max-width: 100vw;
+}
+
+#mobile-image-placeholder img {
+   max-height: 256px;
+   max-width: 100vw;
+}
+
 .big-image{
   height: 432px;
   width: 728px;
@@ -109,50 +136,141 @@ h9 {
   margin: 0;
   height: 432px;
   width: 296px;
-  border: 2px solid red;
   border-radius: 5px;
   background-color: #FFFFFF;
+  padding-top: 48px;
+  padding-left: 40px;
+}
+
+.sale-details h6 {
+  padding-bottom: 8px;
+  font-size: 10px;
+}
+
+.sale-details h1 {
+  padding-bottom: 24px;
+}
+
+.sale-details h4 {
+  padding-top: 0;
+  padding-bottom: 16px;
+}
+
+.item-info {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.statistics{
+  display: block;
+}
+
+.statistics ul {
+  list-style: none;
+}
+
+.statistics li {
+  display: inline-block;
+}
+
+.car-badge{
+  display: inline-block;
+  float: left;
+  width: 33.3%;
+}
+
+.clearBoth {
+  clear: both;
+}
+
+.car-badge h6{
+  padding-bottom: 4px;
+}
+
+.counter{
+  color: #106838;
 }
 
 .top-box {
   display: flex;
   width: 100%;
-  border: 1px solid red;
+}
+
+@media screen and (max-width: 1024px) {
+    .top-box {
+        display: block;
+    }
+    .sale-details {
+      height: 256px;
+      width: 100%;
+    }
+
+    .car-info{
+      float: left;
+    }
+
+    .publication-info{
+      float:right;
+    }
 }
 
 .bottom-box {
   display: flex;
   width: 100%;
-  border: 1px solid red;
   padding: 24px;
 }
 
 .list-detail {
   background-color: #FFFFFF;
   width: 480px;
-  height: 266px;
+  min-height: 266px;
   margin-left: 8px;
   margin-right: 8px;
+  padding: 40px;
+}
+
+.list-detail h4 {
+  text-align: left;
+  color: #9B9B9B;
+}
+
+.list-detail h4.uppercase {
+  text-transform: uppercase;
+}
+
+.list-detail h4.bold {
+  font-weight: bold;
+}
+
+.list-detail h4.text-black {
+  color: #343434;
+}
+
+
+.list-detail td {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+@media screen and (max-width: 1024px) {
+    .bottom-box {
+        display: block;
+        padding: 0;
+    }
+    .list-detail {
+      width: 100%;
+      margin: 0;
+      margin-bottom: 12px;
+    }
 }
 
 .App {
-  text-align: center;
+  text-align: left;
   width: 100%;
   margin: 0 auto;
   padding: 0px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
 
 .App-title {
   font-size: 1.5em;
@@ -162,7 +280,32 @@ h9 {
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.callus-button {
+    background-color: #3FB34A;
+    border: none;
+    color: #FFFFFF;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.picture-list{
+  margin-top: 32px;
+}
+
+.picture-list-item {
+   height: 220px;
+   padding-right: 2px;
+   float:left;
+}
+
+.small-image {
+  height: 220px;
+  width: 169px;
 }
