@@ -2,9 +2,11 @@ import React, {Component} from 'react';
 
 class MobileImagePlaceHolder extends Component {
   render() {
+    const {picture} = this.props;
+
     return (
       <div id="mobile-image-placeholder">
-        <img className="big-image" src="https://static.pexels.com/photos/170811/pexels-photo-170811.jpeg" />
+        <img className="big-image" src={picture} />
       </div>
     )
   }

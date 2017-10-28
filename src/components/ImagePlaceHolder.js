@@ -1,16 +1,9 @@
 import React, {Component} from 'react';
 
 class ImagePlaceHolder extends Component {
-  constructor(props){
-    super(props);
-
-    this.state = {
-      picture: props.picture,
-    };
-  }
 
   render(){
-    const {picture} = this.state;
+    const {picture} = this.props;
 
     return (
       <div id="image-placeholder">

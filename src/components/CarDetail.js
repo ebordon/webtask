@@ -23,8 +23,6 @@ class CarDetail extends Component {
   }
 
   onPictureClick(image) {
-      console.log("En onPictureClick");
-      console.log(image);
 
       this.setState({ selectedPicture: image });
 
@@ -32,23 +30,22 @@ class CarDetail extends Component {
 
   render() {
     const { pictures } = this.state;
-    const { selectedPicture } = this.state;
 
     return (
       <div className="car-detail-content">
         <div className="top-box">
-          <MediaQuery minDeviceWidth={1024}>
+          <MediaQuery minWidth={1024}>
             {(matches) => {
               if (matches) {
-                return <ImagePlaceHolder picture={selectedPicture}/>;
+                return <ImagePlaceHolder picture={this.state.selectedPicture} />;
               } else {
-                return <MobileImagePlaceHolder />;
+                return <MobileImagePlaceHolder picture={this.state.selectedPicture}/>;
               }
             }}
           </MediaQuery>
           <SaleDetails />
         </div>
-        <MediaQuery minDeviceWidth={1024}>
+        <MediaQuery minWidth={1024}>
           {(matches) => {
             if (matches) {
               return <PictureList onPictureClick={this.onPictureClick} images={pictures} />;

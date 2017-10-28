@@ -12,7 +12,6 @@ class PictureList extends Component {
   }
 
   onImageClicked(image) {
-    console.log("en onimageclicked " + image);
 
     const { onPictureClick } = this.props;
 

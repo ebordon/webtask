@@ -111,6 +111,7 @@ tr:last-child {
 .car-detail-content {
   margin: 0 auto;
   padding: 0px;
+  display: table;
 }
 
 /*placeholder for the big image*/
@@ -211,6 +212,7 @@ tr:last-child {
 
     .publication-info{
       float:right;
+      padding-right: 24px;
     }
 }
 
