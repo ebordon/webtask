@@ -6,7 +6,7 @@ class MobileImagePlaceHolder extends Component {
 
     return (
       <div id="mobile-image-placeholder">
-        <img className="big-image" src={picture} />
+        <img className="big-image" alt={picture} src={picture} />
       </div>
     )
   }

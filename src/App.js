@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
-import CarDetail from './components/CarDetail';
+import Main from './components/Main';
+import Footer from './components/Footer';
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
         <Navbar />
-        <CarDetail />
+        <Main />
+        <Footer />
       </div>
     );
   }

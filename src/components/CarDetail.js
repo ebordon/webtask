@@ -6,20 +6,32 @@ import ImagePlaceHolder from './ImagePlaceHolder';
 import MobileImagePlaceHolder from './MobileImagePlaceHolder';
 import PictureList from './PictureList'
 
+const api_url = process.env.API_URL || 'http://localhost:5000';
+
 class CarDetail extends Component {
   constructor(props){
     super(props);
 
     this.state = {
-      pictures : ["https://drop.ndtv.com/albums/AUTO/tata_tigor_review/tigorgallerythumb_281817_181809_4088_640x480.jpg",
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0ezPFeqbhrhn4CLQvdlErofISKvmUEUQr10nbAxRKobrk_3zi",
-                  "https://www.ford.com/cmslibs/content/dam/vdm_ford/live/en_us/ford/nameplate/focus/2017/collections/Interior_Gallery/3-2/fcs17_pg_int_015.jpg/_jcr_content/renditions/cq5dam.web.768.768.jpeg",
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo2-ql-BeJnma0NczmbTI517PFBF6CJgEFaUVITtFllOVqpScC",
-                  "https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/ford-focus-rear_0.jpg?itok=J6l_pWe4",
-                  "https://di-uploads-pod1.s3.amazonaws.com/joerizzafordorlandpark/uploads/2015/03/2015-ford-focus-interior13.jpg"],
-      selectedPicture: "https://drop.ndtv.com/albums/AUTO/tata_tigor_review/tigorgallerythumb_281817_181809_4088_640x480.jpg"
+      name: '',
+      car_details: {},
+      publication_stats: {},
+      sale_details: {},
+      pictures : [],
+      selectedPicture: ""
     };
     this.onPictureClick = this.onPictureClick.bind(this);
+  }
+
+  componentDidMount(){
+    const car_id = this.props.match.params.car_id;
+    fetch(`${api_url}/cars/${car_id}`)
+     .then(results => {
+       return results.json()
+    }).then(data => {
+       const {name, car_details, publication_stats, sale_details, pictures} = data;
+       this.setState({name, car_details, publication_stats, sale_details, pictures, selectedPicture:pictures[0]})
+    })
   }
 
   onPictureClick(image) {
@@ -29,23 +41,25 @@ class CarDetail extends Component {
   }
 
   render() {
-    const { pictures } = this.state;
 
+    const { name, car_details, publication_stats, sale_details, pictures, selectedPicture } = this.state;
+    if (!car_details) return (<div>Loading....</div>)
+    else {
     return (
       <div className="car-detail-content">
         <div className="top-box">
           <MediaQuery minWidth={1024}>
             {(matches) => {
               if (matches) {
-                return <ImagePlaceHolder picture={this.state.selectedPicture} />;
+                return <ImagePlaceHolder picture={selectedPicture} />;
               } else {
-                return <MobileImagePlaceHolder picture={this.state.selectedPicture}/>;
+                return <MobileImagePlaceHolder picture={selectedPicture}/>;
               }
             }}
           </MediaQuery>
-          <SaleDetails />
+          <SaleDetails details={sale_details} name={name} summary={car_details.general} stats={publication_stats}/>
         </div>
-        <MediaQuery minWidth={1024}>
+        <MediaQuery minDeviceWidth={1024}>
           {(matches) => {
             if (matches) {
               return <PictureList onPictureClick={this.onPictureClick} images={pictures} />;
@@ -55,11 +69,12 @@ class CarDetail extends Component {
           }}
         </MediaQuery>
         <div className="bottom-box">
-          <ListDetail title="Exterior"/>
-          <ListDetail title="Performance"/>
+          <ListDetail title="Exterior" details={car_details.exterior}/>
+          <ListDetail title="Performance" details={car_details.performance}/>
         </div>
       </div>
     );
+  }
   }
 }
 

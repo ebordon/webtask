@@ -7,7 +7,7 @@ class ImagePlaceHolder extends Component {
 
     return (
       <div id="image-placeholder">
-        <img className="big-image" src={picture} />
+        <img className="big-image" alt={picture} src={picture} />
       </div>
     );
   }

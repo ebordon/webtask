@@ -22,7 +22,7 @@ class PictureListItem extends Component {
 
     return (
       <div className="picture-list-item">
-        <img className="small-image" onClick={this.onImageClicked} src={image} />
+        <img className="small-image" alt={image} onClick={this.onImageClicked} src={image} />
       </div>
     );
   }

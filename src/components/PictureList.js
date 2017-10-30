@@ -24,9 +24,9 @@ class PictureList extends Component {
 
     return (
       <div className="picture-list">
-      {images.map((image) =>
+      {images.map((image, index) =>
           <PictureListItem
-            image={image}  onPictureClick={this.onImageClicked}
+            key={index} image={image}  onPictureClick={this.onImageClicked}
           />
       )}
       </div>
