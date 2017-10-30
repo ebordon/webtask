@@ -7,16 +7,19 @@ h1, h4, h8 {
  font-family: "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", sans-serif;
  margin-bottom: 0;
  font-weight: bold;
+ margin-top: 0;
 }
 
 h2, h3, h6 {
   font-family: "HelveticaNeue", "Helvetica Neue", sans-serif;
   margin-bottom: 0;
+  margin-top: 0;
 }
 
 h5, h7, h9 {
   font-family: "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", sans-serif;
   margin-bottom: 0;
+  margin-top: 0;
 }
 
 
@@ -148,7 +151,6 @@ tr:last-child {
 .sale-details h6 {
   padding-bottom: 8px;
   font-size: 10px;
-  margin-top: 0;
 }
 
 .sale-details h1 {
@@ -159,7 +161,6 @@ tr:last-child {
 .sale-details h4 {
   padding-top: 0;
   padding-bottom: 16px;
-  margin-top: 0;
 }
 
 .item-info {
